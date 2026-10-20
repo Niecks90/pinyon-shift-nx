@@ -47,6 +47,7 @@ std::vector<LiveCandidate> FindLiveProfileValue(uint32_t value, uint32_t neighbo
                                                 uint32_t neighbour_b, uint32_t window,
                                                 size_t max_candidates) {
   std::vector<LiveCandidate> candidates;
+  candidates.reserve(max_candidates);
 #if defined(_WIN32)
   auto* kernel_state = rex::system::kernel_state();
   if (!kernel_state) return candidates;
